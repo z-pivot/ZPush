@@ -6,12 +6,9 @@ import android.util.Log;
 import com.zpush.core.ZPushIntentService;
 import com.zpush.core.ZPushMessage;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * 需要定义一个receiver 或 Service 来接收透传和通知栏点击的信息，建议使用Service，更加简单
- * Created by Wiki on 2017/6/3.
  */
 
 public class PushIntentService extends ZPushIntentService {

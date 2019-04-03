@@ -13,6 +13,15 @@
     ```
 ### 2、app的build.gradle
   * 添加依赖
+  ```
+  //lib-core必须依赖
+  implementation 'com.github.z-pivot.ZPush:lib-core:1.0.1'
+  //选择使用的平台依赖
+  implementation 'com.github.z-pivot.ZPush:lib-jpush:1.0.1'
+  implementation 'com.github.z-pivot.ZPush:lib-getui:1.0.1'
+  implementation 'com.github.z-pivot.ZPush:lib-baidu:1.0.1'
+  implementation 'com.github.z-pivot.ZPush:lib-xinge:1.0.1'
+  ```
   * 设置必须的参数
   ```
   manifestPlaceholders = [
@@ -38,25 +47,25 @@
   ```
 ### 3、Application设置
 ```
-        //个推
-        //ZPushClient.addPushManager(new GeTuiManager());
-        //ZPushClient.setUsePushName(GeTuiManager.NAME);
-        
-        //JPush极光
-        ZPushClient.addPushManager(new JPushManager());
-        ZPushClient.setUsePushName(JPushManager.NAME);
-        
-        //百度
-        //ZPushClient.addPushManager(new BaiduManager());
-        //ZPushClient.setUsePushName(BaiduManager.NAME);
-        
-        //信鸽（腾讯TPush）
-        //ZPushClient.addPushManager(new XingeManager());
-        //ZPushClient.setUsePushName(XingeManager.NAME);
-        
-        // 配置接收推送消息的服务类
-        ZPushClient.setPushIntentService(PushIntentService.class);
-
-        // 注册推送
-        ZPushClient.registerPush(this);
+   //个推
+   //ZPushClient.addPushManager(new GeTuiManager());
+   //ZPushClient.setUsePushName(GeTuiManager.NAME);
+   
+   //JPush极光
+   ZPushClient.addPushManager(new JPushManager());
+   ZPushClient.setUsePushName(JPushManager.NAME);
+   
+   //百度
+   //ZPushClient.addPushManager(new BaiduManager());
+   //ZPushClient.setUsePushName(BaiduManager.NAME);
+   
+   //信鸽（腾讯TPush）
+   //ZPushClient.addPushManager(new XingeManager());
+   //ZPushClient.setUsePushName(XingeManager.NAME);
+   
+   // 配置接收推送消息的服务类
+   ZPushClient.setPushIntentService(PushIntentService.class);
+   
+   // 注册推送
+   ZPushClient.registerPush(this);
 ```
