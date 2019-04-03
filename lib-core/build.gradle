@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -30,3 +29,4 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 }
+apply from: './maven-push.gradle'
