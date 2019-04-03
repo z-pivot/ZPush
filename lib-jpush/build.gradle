@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -36,3 +35,4 @@ dependencies {
     // 此处以JCore 1.2.5 版本为例。
     implementation project(':lib-core')
 }
+apply from: './maven-push.gradle'
