@@ -1,0 +1,1 @@
+include ':app', ':lib-core', ':lib-getui', ':lib-jpush', ':lib-jpush', ':lib-baidu', ':lib-xinge'

@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.zpush.demo"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        manifestPlaceholders = [
+                PACKAGE_NAME: applicationId,
+                /*
+                GETUI_APP_ID : "12PuCZy4ov9PERRt0F4GT7",
+                GETUI_APP_KEY : "Hb6u7bT6rL9ttPXmhowMr1",
+                GETUI_APP_SECRET : "V0lrA7f4KP9nnIuyqxKC26"
+                */
+
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "a13f1062e045150f67a2349e", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default" //暂时填写默认值即可.
+                /*BAIDU_APIKEY:"aAY24FNKHxIahv6NegqVCyyi"*/
+                /*XG_ACCESS_ID : "2100330744",
+                XG_ACCESS_KEY: "AJN7T4S7S65N"*/
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation project(':lib-core')
+    implementation project(':lib-jpush')
+    //    implementation project(':lib-getui')
+//    implementation project(':lib-baidu')
+//    implementation project(':lib-xinge')
+}

@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zpush.core">
+
+    <!--MIX PUSH-->
+    <permission
+        android:name="${PACKAGE_NAME}.permission.ZPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${PACKAGE_NAME}.permission.ZPUSH_RECEIVE" />
+    <application></application>
+</manifest>
