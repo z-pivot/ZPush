@@ -45,7 +45,23 @@
                   */
           ]
   ```
-### 3、Application设置
+### 3、编写自定义推送消息服务类
+```
+public class PushIntentService extends ZPushIntentService {
+    @Override
+    public void onReceivePassThroughMessage(ZPushMessage message) {
+        Log.e(TAG, "收到透传消息 -> " + message.getPlatform());
+        Log.e(TAG, "收到透传消息 -> " + message.getContent());
+    }
+
+    @Override
+    public void onNotificationMessageClicked(ZPushMessage message) {
+        Log.e(TAG, "通知栏消息点击 -> " + message.getPlatform());
+        Log.e(TAG, "通知栏消息点击 -> " + message.getContent());
+    }
+}
+```
+### 4、Application设置
 ```
    //个推
    //ZPushClient.addPushManager(new GeTuiManager());
